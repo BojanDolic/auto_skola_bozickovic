@@ -1,0 +1,2 @@
+rootProject.name = "Auto škola Božičković"
+include ':app'
