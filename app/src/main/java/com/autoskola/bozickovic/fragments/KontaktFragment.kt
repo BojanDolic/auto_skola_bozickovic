@@ -43,9 +43,27 @@ class KontaktFragment : Fragment() {
             openPhone()
         }
 
+        binding.emailContactBtn.setOnClickListener {
+            openEmail()
+        }
+
 
     }
 
+    /**
+     * Function that opens email application and opens send screen
+     */
+    fun openEmail() {
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            setType("message/rfc822")
+                setData(Uri.parse("mailto:autoskolabozickovic2021@gmail.com"))
+        }
+        startActivity(Intent.createChooser(intent, "Izaberite aplikaciju"))
+    }
+
+    /**
+     * Function that opens phone application with specified phone number
+     */
     fun openPhone() {
         val intent = Intent(Intent.ACTION_DIAL).apply {
             setData(Uri.parse("tel:065566600"))
