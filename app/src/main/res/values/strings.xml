@@ -2,4 +2,16 @@
     <string name="app_name">Auto škola Božičković</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="onama_tekst">Auto škola ""Božičković"" je auto škola koja svoje usluge pruža još od 2008 godine.
+    \n\nPružamo širok spektar kategorija za polagenje. Isto tako imamo i sjajan tim iskusnih instruktora koji iza sebe imaju godine iskustva kako kao instruktori tako i kao samostalni vozači.
+Naša misija je da obučimo buduće vozače kako da se ponašaju u saobraćaju i da budu svijesni šta sve čini saobraćaj.
+    \n\nVjerujemo da imamo najbolji kvalitet, najveći spektar usluga uz prihvatljivu cenu.</string>
+    <string name="lista_instruktora">- Željko Božičković
+        \n- Mira Božičković
+        \n- Dejan Božičković
+    </string>
+    <string name="aggressiveclick_footer">Aplikacija podržana od Aggressive Click\ncontact@aggressiveclick.com | +387 66 631 930</string>
+
+
 </resources>

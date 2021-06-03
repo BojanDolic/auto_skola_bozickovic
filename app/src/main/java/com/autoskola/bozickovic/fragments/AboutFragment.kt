@@ -8,24 +8,28 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.autoskola.bozickovic.R
-import com.autoskola.bozickovic.databinding.FragmentMainBinding
+import com.autoskola.bozickovic.databinding.FragmentAboutBinding
 
 
-class MainFragment : Fragment() {
+class AboutFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentAboutBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentAboutBinding.inflate(
+            inflater,
+            container,
+            false
+        )
         return binding.root
     }
 
@@ -34,15 +38,10 @@ class MainFragment : Fragment() {
 
         NavigationUI.setupWithNavController(binding.toolbar, findNavController())
 
-        binding.kontaktBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToKontaktFragment())
-        }
-
-        binding.onamaBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToAboutFragment())
-        }
-
     }
+
+
+
 
     override fun onDestroy() {
         super.onDestroy()

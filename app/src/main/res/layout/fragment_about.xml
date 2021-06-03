@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AboutFragment"
+    android:layout_marginBottom="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/onama_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardViewStroke"
+            app:contentPadding="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="O nama"
+                    android:fontFamily="@font/manrope_extrabold"
+                    app:icon="@drawable/person_icon"
+                    app:iconTint="@color/yellow"
+                    app:iconSize="24dp"
+                    android:textAlignment="textStart"
+                    app:iconPadding="12dp"
+                    android:paddingTop="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingBottom="0dp"/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/onama_tekst"
+                    android:fontFamily="@font/manrope_regular"
+                    android:textSize="18sp"
+                    android:justificationMode="inter_word"/>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/kategorije_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardViewStroke"
+            app:contentPadding="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/onama_container"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="Kategorije"
+                    android:fontFamily="@font/manrope_extrabold"
+                    app:icon="@drawable/kategorije_icon"
+                    app:iconSize="24dp"
+                    android:textAlignment="textStart"
+                    app:iconPadding="12dp"
+                    android:paddingTop="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingBottom="0dp"/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vršimo obučavanje sledećih kategorija:"
+                    android:fontFamily="@font/manrope_regular"
+                    android:textSize="16sp"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="A, A1"
+                    android:textSize="16sp"
+                    app:icon="@drawable/bike_icon"
+                    app:iconSize="28dp"
+                    android:layout_marginTop="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="B, B1, BE"
+                    android:textSize="16sp"
+                    app:icon="@drawable/car_icon"
+                    app:iconSize="28dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="C, C1, CE, C1E"
+                    android:textSize="16sp"
+                    app:icon="@drawable/truck_icon"
+                    app:iconSize="28dp"/>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/instruktori_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardViewStroke"
+            app:contentPadding="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/kategorije_container"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="Instruktori"
+                    android:fontFamily="@font/manrope_extrabold"
+                    app:icon="@drawable/instruktori_icon"
+                    app:iconTint="@color/red"
+                    app:iconSize="24dp"
+                    android:textAlignment="textStart"
+                    app:iconPadding="12dp"
+                    android:paddingTop="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingBottom="0dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lista_instruktora"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/manrope_regular"/>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/radnovrijeme_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardViewStroke"
+            app:contentPadding="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instruktori_container"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:text="Radno vrijeme"
+                    android:fontFamily="@font/manrope_extrabold"
+                    app:icon="@drawable/clock_icon"
+                    app:iconTint="@color/green"
+                    app:iconSize="24dp"
+                    android:textAlignment="textStart"
+                    app:iconPadding="12dp"
+                    android:paddingTop="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingBottom="0dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:fontFamily="@font/manrope_regular"
+                    android:text="Ponedeljak - Petak: 08:00 - 16:00"
+                    android:textAlignment="textStart"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:fontFamily="@font/manrope_regular"
+                    android:text="Subota: 08:00 - 16:00"
+                    android:textAlignment="textStart"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/MaterialTextButton"
+                    android:fontFamily="@font/manrope_regular"
+                    android:text="Nedelja: ZATVORENO"
+                    android:textAlignment="textStart"/>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
