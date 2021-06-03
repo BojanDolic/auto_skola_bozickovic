@@ -1,5 +1,7 @@
 package com.autoskola.bozickovic.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -35,6 +37,20 @@ class KontaktFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         NavigationUI.setupWithNavController(binding.toolbar, findNavController())
+
+
+        binding.phoneCallBtn.setOnClickListener {
+            openPhone()
+        }
+
+
+    }
+
+    fun openPhone() {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            setData(Uri.parse("tel:065566600"))
+        }
+        startActivity(intent)
     }
 
 }

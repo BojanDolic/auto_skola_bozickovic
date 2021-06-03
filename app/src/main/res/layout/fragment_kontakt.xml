@@ -10,7 +10,6 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -20,11 +19,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/contact_btns_container"
         app:contentPadding="9dp"
-        app:cardCornerRadius="6dp"
-        android:translationZ="8dp"
-        app:cardElevation="8dp"
-        android:layout_margin="6dp">
+        app:cardCornerRadius="9dp"
+        style="@style/CardViewStroke"
+        android:layout_margin="9dp"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -35,6 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Načini da stupite u kontakt sa nama:"
+                android:fontFamily="@font/manrope_regular"
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:textSize="19sp"
@@ -47,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Broj telefona:\n065 566 600"
+                android:fontFamily="@font/manrope_bold"
                 android:textSize="14sp"
                 android:clickable="false"
                 app:icon="@drawable/phone_icon"
@@ -66,7 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="E-mail:\nautoskolabozickovic2021@gmail.com"
-                android:textSize="14sp"
+                android:fontFamily="@font/manrope_bold"
+                android:textSize="13sp"
                 android:clickable="false"
                 app:icon="@drawable/email_icon"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -83,6 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lokacija:\nUlica Srpskih sokolova, Doboj"
+                android:fontFamily="@font/manrope_bold"
                 android:textSize="14sp"
                 android:clickable="false"
                 app:icon="@drawable/location_icon"
@@ -98,36 +102,49 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/email_contact_btn"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contact_btns_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        app:icon="@drawable/email_icon"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/kontakt_card"
-        app:layout_constraintEnd_toStartOf="@id/phone_call_btn"
-        android:layout_marginEnd="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="12dp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/phone_call_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Pozovite nas"
-        app:icon="@drawable/phone_icon"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@id/email_contact_btn"
-        app:layout_constraintBottom_toTopOf="@id/kontakt_slika"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/kontakt_card"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="9dp">
 
 
-    <ImageView
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/email_contact_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:fontFamily="@font/manrope_bold"
+            app:icon="@drawable/email_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/phone_call_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/phone_call_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pozovite"
+            android:fontFamily="@font/manrope_bold"
+            app:icon="@drawable/phone_icon"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/email_contact_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+   <!-- <ImageView
         android:id="@+id/kontakt_slika"
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -138,6 +155,6 @@
         android:scaleType="centerCrop"
         android:layout_marginTop="12dp"
         android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"/>
+        android:layout_marginEnd="6dp"/> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
