@@ -6,51 +6,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.autoskola.bozickovic.R
 import com.autoskola.bozickovic.databinding.FragmentMainBinding
+import com.autoskola.bozickovic.databinding.FragmentTestoviBinding
 
 
-class MainFragment : Fragment() {
+class TestoviFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentTestoviBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentTestoviBinding.inflate(
+            inflater,
+            container,
+            false
+        )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        NavigationUI.setupWithNavController(binding.toolbar, findNavController())
-
-        binding.kontaktBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToKontaktFragment())
-        }
-
-        binding.onamaBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToAboutFragment())
-        }
-
-        binding.testoviBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToTestoviFragment())
+        binding.kategorijaAContainer.setOnClickListener {
+            findNavController().navigate(TestoviFragmentDirections.actionTestoviFragmentToSelectTestFragment("A"))
         }
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
-
 }

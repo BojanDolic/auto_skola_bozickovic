@@ -13,5 +13,14 @@ Naša misija je da obučimo buduće vozače kako da se ponašaju u saobraćaju i
     </string>
     <string name="aggressiveclick_footer">Aplikacija podržana od Aggressive Click\ncontact@aggressiveclick.com | +387 66 631 930</string>
 
+    <string name="kategorija_a_text">Kategorija A</string>
+    <string name="kategorija_b_text">Kategorija B</string>
+    <string name="kategorija_c_text">Kategorija C</string>
+
+    <string name="teorija_test_desc_text">Ovaj test se sastoji od 20 nasumično izabranih teorijskih pitanja.</string>
+    <string name="znakovi_test_desc_text">Ovaj test se sastoji od 20 nasumično izabranih saobraćajnih znakova.</string>
+    <string name="raskrsnice_test_desc_text">Ovaj test se sastoji od 20 nasumično izabranih saobraćajnih raskrsnica.</string>
+    <string name="probni_test_desc_text">Ovaj test se sastoji od teorijskih pitanja, saobraćajnih znakova i saobraćajnih raskrsnica.</string>
+
 
 </resources>

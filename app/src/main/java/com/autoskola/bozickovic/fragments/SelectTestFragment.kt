@@ -8,24 +8,27 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.autoskola.bozickovic.R
-import com.autoskola.bozickovic.databinding.FragmentMainBinding
+import com.autoskola.bozickovic.databinding.FragmentSelectTestBinding
 
+class SelectTestFragment : Fragment() {
 
-class MainFragment : Fragment() {
-
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentSelectTestBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentSelectTestBinding.inflate(
+            inflater,
+            container,
+            false
+        )
         return binding.root
     }
 
@@ -33,23 +36,10 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         NavigationUI.setupWithNavController(binding.toolbar, findNavController())
-
-        binding.kontaktBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToKontaktFragment())
-        }
-
-        binding.onamaBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToAboutFragment())
-        }
-
-        binding.testoviBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToTestoviFragment())
-        }
-
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

@@ -22,6 +22,12 @@
             app:enterAnim="@android:anim/slide_in_left"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_testoviFragment"
+            app:destination="@id/testoviFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/mainFragment" />
     </fragment>
 
     <fragment
@@ -35,4 +41,25 @@
         android:name="com.autoskola.bozickovic.fragments.AboutFragment"
         android:label="O auto školi"
         tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/testoviFragment"
+        android:name="com.autoskola.bozickovic.fragments.TestoviFragment"
+        android:label="fragment_testovi"
+        tools:layout="@layout/fragment_testovi" >
+        <action
+            android:id="@+id/action_testoviFragment_to_selectTestFragment"
+            app:destination="@id/selectTestFragment"
+            app:popUpTo="@id/testoviFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectTestFragment"
+        android:name="com.autoskola.bozickovic.fragments.SelectTestFragment"
+        android:label="Izaberite test"
+        tools:layout="@layout/fragment_select_test" >
+        <argument
+            android:name="kategorija"
+            app:argType="string" />
+    </fragment>
 </navigation>
