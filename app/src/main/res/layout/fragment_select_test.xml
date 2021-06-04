@@ -40,7 +40,9 @@
                 android:fontFamily="@font/manrope_extrabold"
                 app:icon="@drawable/kategorije_icon"
                 app:iconSize="28dp"
-                app:iconTint="@color/blue"/>
+                app:iconTint="@color/blue"
+                android:clickable="false"
+                app:rippleColor="@null"/>
 
 
             <com.google.android.material.textview.MaterialTextView
@@ -82,7 +84,9 @@
                 android:fontFamily="@font/manrope_extrabold"
                 app:icon="@drawable/znak_icon"
                 app:iconSize="28dp"
-                app:iconTint="@color/red"/>
+                app:iconTint="@color/red"
+                android:clickable="false"
+                app:rippleColor="@null"/>
 
 
             <com.google.android.material.textview.MaterialTextView
@@ -125,7 +129,9 @@
                 android:fontFamily="@font/manrope_extrabold"
                 app:icon="@drawable/semafor_icon"
                 app:iconSize="28dp"
-                app:iconTint="@color/green"/>
+                app:iconTint="@color/green"
+                android:clickable="false"
+                app:rippleColor="@null"/>
 
 
             <com.google.android.material.textview.MaterialTextView
@@ -168,7 +174,9 @@
                 android:fontFamily="@font/manrope_extrabold"
                 app:icon="@drawable/car_icon_second"
                 app:iconSize="28dp"
-                app:iconTint="@color/yellow"/>
+                app:iconTint="@color/yellow"
+                android:clickable="false"
+                app:rippleColor="@null"/>
 
 
             <com.google.android.material.textview.MaterialTextView

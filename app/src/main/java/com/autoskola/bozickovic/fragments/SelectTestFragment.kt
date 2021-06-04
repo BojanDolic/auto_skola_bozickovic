@@ -1,6 +1,7 @@
 package com.autoskola.bozickovic.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.autoskola.bozickovic.R
+import com.autoskola.bozickovic.database.PitanjaDatabase
 import com.autoskola.bozickovic.databinding.FragmentSelectTestBinding
 
 class SelectTestFragment : Fragment() {
@@ -36,6 +38,13 @@ class SelectTestFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         NavigationUI.setupWithNavController(binding.toolbar, findNavController())
+
+
+        val database = PitanjaDatabase.getDatabase(requireContext())
+        val pitanja = database.wordDao().getAllPitanjaKategorijaC()
+
+        Log.d("TAG", "onViewCreated: $pitanja")
+
     }
 
     override fun onDestroyView() {
