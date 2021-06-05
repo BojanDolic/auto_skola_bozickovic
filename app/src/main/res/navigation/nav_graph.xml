@@ -61,5 +61,23 @@
         <argument
             android:name="kategorija"
             app:argType="string" />
+        <action
+            android:id="@+id/action_selectTestFragment_to_testFragment"
+            app:destination="@id/testFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/selectTestFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.autoskola.bozickovic.fragments.TestFragment"
+        android:label="Test"
+        tools:layout="@layout/test_fragment" >
+        <argument
+            android:name="kategorija"
+            app:argType="string" />
+        <argument
+            android:name="tip"
+            app:argType="string" />
     </fragment>
 </navigation>

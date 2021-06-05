@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.autoskola.bozickovic.Constants
 import com.autoskola.bozickovic.R
 import com.autoskola.bozickovic.databinding.FragmentMainBinding
 import com.autoskola.bozickovic.databinding.FragmentTestoviBinding
@@ -37,7 +38,19 @@ class TestoviFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.kategorijaAContainer.setOnClickListener {
-            findNavController().navigate(TestoviFragmentDirections.actionTestoviFragmentToSelectTestFragment("A"))
+            findNavController().navigate(
+                TestoviFragmentDirections.actionTestoviFragmentToSelectTestFragment(
+                    Constants.KATEGORIJA_A))
+        }
+        binding.kategorijaBContainer.setOnClickListener {
+            findNavController().navigate(
+                TestoviFragmentDirections.actionTestoviFragmentToSelectTestFragment(
+                    Constants.KATEGORIJA_B))
+        }
+        binding.kategorijaCContainer.setOnClickListener {
+            findNavController().navigate(
+                TestoviFragmentDirections.actionTestoviFragmentToSelectTestFragment(
+                    Constants.KATEGORIJA_C))
         }
 
     }

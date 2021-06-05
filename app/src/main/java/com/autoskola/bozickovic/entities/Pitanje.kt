@@ -20,7 +20,7 @@ data class Pitanje(
     val odgovori: List<String> = listOf(),
 
     @ColumnInfo(name = "tacni_odgovori")
-    val tacniOdgovori: List<String> = listOf(),
+    val tacniOdgovori: List<Int> = listOf(),
 
     @ColumnInfo(name = "slika_pitanja")
     val slikaPitanja: String = "",

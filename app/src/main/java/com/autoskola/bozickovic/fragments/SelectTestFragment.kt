@@ -7,15 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.NavigationUI
+import com.autoskola.bozickovic.Constants
 import com.autoskola.bozickovic.R
 import com.autoskola.bozickovic.database.PitanjaDatabase
 import com.autoskola.bozickovic.databinding.FragmentSelectTestBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SelectTestFragment : Fragment() {
 
     private var _binding: FragmentSelectTestBinding? = null
     private val binding get() = _binding!!
+
+    val args: SelectTestFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +45,23 @@ class SelectTestFragment : Fragment() {
 
         NavigationUI.setupWithNavController(binding.toolbar, findNavController())
 
+        binding.testTeorijeContainer.setOnClickListener {
+            findNavController().navigate(
+                SelectTestFragmentDirections.actionSelectTestFragmentToTestFragment(
+                    args.kategorija,
+                    Constants.CONSTANT_TEORIJA
+                )
+            )
+        }
 
-        val database = PitanjaDatabase.getDatabase(requireContext())
-        val pitanja = database.wordDao().getAllPitanjaKategorijaC()
-
-        Log.d("TAG", "onViewCreated: $pitanja")
+        binding.testZnakovaContainer.setOnClickListener {
+            findNavController().navigate(
+                SelectTestFragmentDirections.actionSelectTestFragmentToTestFragment(
+                    args.kategorija,
+                    Constants.CONSTANT_ZNAK
+                )
+            )
+        }
 
     }
 

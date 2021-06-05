@@ -21,6 +21,8 @@ Naša misija je da obučimo buduće vozače kako da se ponašaju u saobraćaju i
     <string name="znakovi_test_desc_text">Ovaj test se sastoji od 20 nasumično izabranih saobraćajnih znakova.</string>
     <string name="raskrsnice_test_desc_text">Ovaj test se sastoji od 20 nasumično izabranih saobraćajnih raskrsnica.</string>
     <string name="probni_test_desc_text">Ovaj test se sastoji od teorijskih pitanja, saobraćajnih znakova i saobraćajnih raskrsnica.</string>
+    <string name="provjeri_odgovor_text">Provjeri odgovor</string>
+    <string name="nastavi_text">Nastavi</string>
 
 
 </resources>
