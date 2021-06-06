@@ -12,6 +12,7 @@ class PitanjaRepository @Inject constructor(
         return pitanjaDao.getTeorijskaPitanja(tip, kategorija)
     }
 
-
-
+    fun getProbniTestPitanja(kategorija: String, limit: Int): List<Pitanje> {
+        return pitanjaDao.getPitanjaForProbniTest(kategorija, limit)
+    }
 }

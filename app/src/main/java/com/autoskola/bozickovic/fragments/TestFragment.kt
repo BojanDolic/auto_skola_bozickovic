@@ -33,10 +33,6 @@ class TestFragment : Fragment() {
 
     val args: TestFragmentArgs by navArgs()
 
-
-    /*private val odgovori: ArrayList<MaterialCheckBox> = arrayListOf()
-    private val checkovaniOdgovori: ArrayList<MaterialCheckBox> = arrayListOf()*/
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

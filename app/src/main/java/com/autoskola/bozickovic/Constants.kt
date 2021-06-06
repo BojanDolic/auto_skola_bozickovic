@@ -9,7 +9,6 @@ object Constants {
     const val CONSTANT_TEORIJA = "teorija"
     const val CONSTANT_ZNAK = "znak"
     const val CONSTANT_RASKRSNICA = "raskrsnica"
-
-    const val CONSTANT_ALL_TYPES = "sve"
+    const val CONSTANT_PROBNI = "sve" // Znači da je izabran probni test, bira sve iz baze
 
 }

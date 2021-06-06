@@ -35,9 +35,15 @@ class TestViewModel @Inject constructor(
     }
 
     fun getTeorijskaPitanja(kategorija: String, tip: String): List<Pitanje> {
-        return if(tip == Constants.CONSTANT_ALL_TYPES)
-            listOf()
+        return if(tip == Constants.CONSTANT_PROBNI) // Izabran probni test
+            repo.getProbniTestPitanja(kategorija, getTestLimit(kategorija))
         else repo.getTeorijskaPitanja(tip, kategorija)
+    }
+
+    private fun getTestLimit(kategorija: String): Int {
+        return if(kategorija == Constants.KATEGORIJA_B || kategorija == Constants.KATEGORIJA_A)
+            20
+        else 30
     }
 
 }

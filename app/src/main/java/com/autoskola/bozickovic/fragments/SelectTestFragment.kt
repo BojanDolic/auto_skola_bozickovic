@@ -63,6 +63,25 @@ class SelectTestFragment : Fragment() {
             )
         }
 
+        binding.testRaskrniceContainer.setOnClickListener {
+            findNavController().navigate(
+                SelectTestFragmentDirections.actionSelectTestFragmentToTestFragment(
+                    args.kategorija,
+                    Constants.CONSTANT_RASKRSNICA
+                )
+            )
+        }
+
+        binding.testProbniContainer.setOnClickListener {
+            findNavController().navigate(
+                SelectTestFragmentDirections.actionSelectTestFragmentToTestFragment(
+                    args.kategorija,
+                    Constants.CONSTANT_PROBNI
+                )
+            )
+        }
+
+
     }
 
     override fun onDestroyView() {
