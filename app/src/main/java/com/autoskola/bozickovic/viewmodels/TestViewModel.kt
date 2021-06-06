@@ -17,6 +17,8 @@ class TestViewModel @Inject constructor(
     var brojPitanja = 0
     var trenutniBrojPitanja = 0
 
+    var tacnihOdgovora = 0
+
     val odgovori: ArrayList<MaterialCheckBox> = arrayListOf()
 
     lateinit var pitanje: Pitanje // Trenutno pitanje
@@ -40,10 +42,27 @@ class TestViewModel @Inject constructor(
         else repo.getTeorijskaPitanja(tip, kategorija)
     }
 
+    /**
+     * Function used to get limit for theory questions
+     * Category C has 10 more questions than other categories
+     *
+     * @param kategorija Category of vehicle
+     *
+     * @return number which is used as limit
+     */
     private fun getTestLimit(kategorija: String): Int {
         return if(kategorija == Constants.KATEGORIJA_B || kategorija == Constants.KATEGORIJA_A)
             20
         else 30
+    }
+
+
+    fun getPointsBasedOnPitanje(tip: String): Int {
+        return if(tip == Constants.CONSTANT_TEORIJA)
+            3
+        else if(tip == Constants.CONSTANT_ZNAK)
+            4
+        else 5
     }
 
 }

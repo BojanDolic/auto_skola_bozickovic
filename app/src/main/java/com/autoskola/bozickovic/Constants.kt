@@ -11,4 +11,7 @@ object Constants {
     const val CONSTANT_RASKRSNICA = "raskrsnica"
     const val CONSTANT_PROBNI = "sve" // Znači da je izabran probni test, bira sve iz baze
 
+    const val KATEGORIJA_C_BODOVA = 140
+    const val KATEGORIJA_AB_BODOVA = 120
+
 }

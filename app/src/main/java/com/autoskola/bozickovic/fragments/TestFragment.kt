@@ -90,6 +90,10 @@ class TestFragment : Fragment() {
             }
         }
 
+        // Add points if question is answered correctly
+        if(correctAnswer)
+            viewModel.tacnihOdgovora += viewModel.getPointsBasedOnPitanje(viewModel.pitanje.tipPitanja)
+
         showAnswers(pitanje)
 
     }
@@ -99,8 +103,16 @@ class TestFragment : Fragment() {
      */
     @SuppressLint("UseCompatLoadingForDrawables")
     fun loadPitanje() {
-        if (viewModel.trenutniBrojPitanja == viewModel.brojPitanja)
-            findNavController().navigateUp()
+        if (viewModel.trenutniBrojPitanja == viewModel.brojPitanja) {
+
+            findNavController().navigate(
+                TestFragmentDirections.actionTestFragmentToResultFragment(
+                    viewModel.tacnihOdgovora,
+                    viewModel.brojPitanja,
+                    args.kategorija
+                )
+            )
+        }
         else {
             viewModel.pitanje = viewModel.pitanja[viewModel.trenutniBrojPitanja]
 

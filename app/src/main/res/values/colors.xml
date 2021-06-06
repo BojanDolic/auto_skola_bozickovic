@@ -13,6 +13,7 @@
     <color name="green_alpha50">#8041884C</color>
 
     <color name="day_theme_textcolor">#1B1B1B</color>
+    <color name="night_theme_textcolor">#FFFFFF</color>
 
     <color name="stroke_color">#808A8A8A</color>
 

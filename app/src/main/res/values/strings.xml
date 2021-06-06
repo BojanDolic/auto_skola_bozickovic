@@ -24,5 +24,14 @@ Naša misija je da obučimo buduće vozače kako da se ponašaju u saobraćaju i
     <string name="provjeri_odgovor_text">Provjeri odgovor</string>
     <string name="nastavi_text">Nastavi</string>
 
+    <string name="kategorija_text">Kategorija: %1$s</string>
+    <string name="broj_pitanja_text">Ukupan broj pitanja: %1$d</string>
+    <string name="tacnih_odgovora_text">Tačno odgovorenih pitanja: %1$d</string>
+
+    <string name="postotak_Text">%1$d %%</string>
+
+    <string name="prosao_ispit_text">POLOŽILI STE TEST</string>
+    <string name="pao_ispit_text">PALI STE TEST</string>
+
 
 </resources>

@@ -79,5 +79,27 @@
         <argument
             android:name="tip"
             app:argType="string" />
+        <action
+            android:id="@+id/action_testFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/selectTestFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.autoskola.bozickovic.fragments.ResultFragment"
+        android:label="Rezultati testa"
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="tacnihOdgovora"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="ukupnoPitanja"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="kategorija"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ResultFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardViewStroke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:contentPadding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/MaterialTextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:fontFamily="@font/manrope_extrabold"
+                android:text="Rezultati"
+                app:iconPadding="12dp"
+                app:icon="@drawable/rezultati_icon"
+                android:textAlignment="viewStart" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/rezultat_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:progress="83"
+                app:indicatorDirectionCircular="clockwise"
+                app:indicatorSize="70dp"
+                app:trackColor="#ccc"
+                app:trackCornerRadius="20dp"
+                app:trackThickness="10dp"
+                android:layout_marginTop="12dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/rezultat_progress_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_extrabold"
+                android:text="86%"
+                android:textAlignment="center"
+                android:textSize="22sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rezultat_kategorija_text"
+                style="@style/MaterialTextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_regular"
+                android:text="@string/kategorija_text"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:icon="@drawable/truck_icon"
+                app:iconTint="@color/red_dark"
+                app:iconPadding="12dp"
+                app:iconSize="32dp"
+                android:layout_marginTop="12dp"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rezultat_pitanja_text"
+                style="@style/MaterialTextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_regular"
+                android:text="@string/broj_pitanja_text"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:icon="@drawable/kategorije_icon"
+                app:iconPadding="12dp"
+                app:iconSize="32dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rezultat_tacnih_odgovora_text"
+                style="@style/MaterialTextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_regular"
+                android:text="@string/tacnih_odgovora_text"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:icon="@drawable/tacnica_icon"
+                app:iconTint="@color/green"
+                app:iconPadding="12dp"
+                app:iconSize="32dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/rezultat_prolaz_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/manrope_extrabold"
+                android:text="NISTE PROŠLI ISPIT"
+                android:textAlignment="center"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
