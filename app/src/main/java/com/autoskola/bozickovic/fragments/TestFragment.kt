@@ -54,6 +54,10 @@ class TestFragment : Fragment() {
         viewModel.pitanja = viewModel.getTeorijskaPitanja(args.kategorija, args.tip)
         viewModel.brojPitanja = viewModel.pitanja.size
 
+        viewModel.maxBodova = viewModel.getMaxTestPoints(
+            viewModel.pitanja
+        )
+
         loadPitanje() // Initial load
 
         binding.provjeriOdgovoreBtn.setOnClickListener {
@@ -91,8 +95,10 @@ class TestFragment : Fragment() {
         }
 
         // Add points if question is answered correctly
-        if(correctAnswer)
-            viewModel.tacnihOdgovora += viewModel.getPointsBasedOnPitanje(viewModel.pitanje.tipPitanja)
+        if(correctAnswer) {
+            viewModel.tacnihOdgovora++
+            viewModel.bodova += viewModel.getPointsBasedOnPitanje(viewModel.pitanje.tipPitanja)
+        }
 
         showAnswers(pitanje)
 
@@ -109,7 +115,9 @@ class TestFragment : Fragment() {
                 TestFragmentDirections.actionTestFragmentToResultFragment(
                     viewModel.tacnihOdgovora,
                     viewModel.brojPitanja,
-                    args.kategorija
+                    args.kategorija,
+                    viewModel.bodova,
+                    viewModel.maxBodova
                 )
             )
         }

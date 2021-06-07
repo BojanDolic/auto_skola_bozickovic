@@ -18,6 +18,8 @@ class TestViewModel @Inject constructor(
     var trenutniBrojPitanja = 0
 
     var tacnihOdgovora = 0
+    var bodova = 0
+    var maxBodova = 0
 
     val odgovori: ArrayList<MaterialCheckBox> = arrayListOf()
 
@@ -40,6 +42,18 @@ class TestViewModel @Inject constructor(
         return if(tip == Constants.CONSTANT_PROBNI) // Izabran probni test
             repo.getProbniTestPitanja(kategorija, getTestLimit(kategorija))
         else repo.getTeorijskaPitanja(tip, kategorija)
+    }
+
+    /*private fun getMaxPointsForType(tip: String): Int {
+        return getPointsBasedOnPitanje(tip)
+    }*/
+
+    fun getMaxTestPoints(pitanja: List<Pitanje>): Int {
+        var points = 0
+        for(pitanje in pitanja)
+            points += getPointsBasedOnPitanje(pitanje.tipPitanja)
+
+        return points
     }
 
     /**

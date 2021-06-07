@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/manrope_extrabold"
-                android:text="86%"
+                android:text="114/120 | 86%"
                 android:textAlignment="center"
                 android:textSize="22sp" />
 

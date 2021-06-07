@@ -101,5 +101,13 @@
         <argument
             android:name="kategorija"
             app:argType="string" />
+        <argument
+            android:name="bodovi"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="maxBodova"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>
