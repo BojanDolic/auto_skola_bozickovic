@@ -1,6 +1,10 @@
 package com.autoskola.bozickovic.fragments
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +36,19 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        NavigationUI.setupWithNavController(binding.toolbar, findNavController())
+        val logo_tekst = SpannableString("Auto škola \"Božičković\"")
+        logo_tekst.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.green)),
+            0, 10,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        logo_tekst.setSpan(
+            ForegroundColorSpan(resources.getColor(R.color.red)),
+            10, 23,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        binding.autoskolaTekstLogo.text = logo_tekst
 
         binding.kontaktBtn.setOnClickListener {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToKontaktFragment())

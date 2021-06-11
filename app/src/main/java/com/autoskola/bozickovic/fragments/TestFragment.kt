@@ -21,6 +21,7 @@ import com.autoskola.bozickovic.databinding.TestFragmentBinding
 import com.autoskola.bozickovic.entities.Pitanje
 import com.autoskola.bozickovic.viewmodels.TestViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.NullPointerException
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -124,24 +125,40 @@ class TestFragment : Fragment() {
         else {
             viewModel.pitanje = viewModel.pitanja[viewModel.trenutniBrojPitanja]
 
+            binding.testPitanjeCount.text = resources.getString(
+                R.string.pitanje_count_text,
+                viewModel.trenutniBrojPitanja,
+                viewModel.brojPitanja
+            )
+
             if(viewModel.pitanje.hasViseOdgovora)
-                binding.pitanjeTekstPitanja.text = "${viewModel.pitanje.tekstPitanja}\n[VIŠE ODGOVORA]"
+                binding.pitanjeTekstPitanja.text = "${viewModel.pitanje.tekstPitanja}\n\n[VIŠE ODGOVORA]"
             else binding.pitanjeTekstPitanja.text = viewModel.pitanje.tekstPitanja
 
             viewModel.pitanje.slikaPitanja.let { slika ->
                 if (slika.isNotEmpty()) {
                     binding.pitanjeSlika.isVisible = true
-                    val drawableId = resources.getIdentifier(
-                        viewModel.pitanje.slikaPitanja,
-                        "drawable",
-                        requireContext().packageName
-                    )
-                    binding.pitanjeSlika.load(
-                        resources.getDrawable(
-                            drawableId,
-                            requireContext().theme
+
+                    //var drawableId: Int = 0
+
+                    try {
+                        val drawableId = resources.getIdentifier(
+                            viewModel.pitanje.slikaPitanja,
+                            "drawable",
+                            requireContext().packageName
                         )
-                    )
+
+                        binding.pitanjeSlika.load(
+                            resources.getDrawable(
+                                drawableId,
+                                requireContext().theme
+                            )
+                        ) {
+                            error(R.drawable.warning_icon)
+                        }
+                    } catch (err: Exception) { }
+
+
                 } else binding.pitanjeSlika.isVisible = false
             }
 

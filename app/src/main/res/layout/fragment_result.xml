@@ -112,7 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/manrope_extrabold"
-                android:text="NISTE PROŠLI ISPIT"
+                android:text="@string/prosao_ispit_text"
+                android:textColor="@color/green"
                 android:textAlignment="center"
                 android:textSize="22sp" />
 

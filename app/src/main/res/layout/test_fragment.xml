@@ -30,6 +30,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/test_pitanje_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/MaterialTextButton"
+                android:text="Pitanje 1/20"
+                android:paddingStart="0dp"
+                android:layout_marginBottom="9dp"
+                android:paddingTop="0dp"
+                android:insetTop="0dp"
+                android:textAlignment="viewStart"
+                android:fontFamily="@font/manrope_extrabold" />
             
             <ImageView
                 android:id="@+id/pitanje_slika"

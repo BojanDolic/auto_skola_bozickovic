@@ -29,6 +29,7 @@ Naša misija je da obučimo buduće vozače kako da se ponašaju u saobraćaju i
     <string name="tacnih_odgovora_text">Tačno odgovorenih pitanja: %1$d</string>
 
     <string name="postotak_bodovi_text">%1$d/%2$d | %3$.2f %%</string>
+    <string name="pitanje_count_text">Pitanje %1$d/%2$d</string>
 
     <string name="prosao_ispit_text">POLOŽILI STE TEST</string>
     <string name="pao_ispit_text">PALI STE TEST</string>

@@ -98,18 +98,6 @@ class ResultFragment : Fragment() {
         }
     }
 
-    /**
-     * Gets maximum points for category of vehicle
-     *
-     * @param kategorija Category of vehicle
-     * @return maximum points
-     */
-    private fun getPointsBasedOnKategorija(kategorija: String): Int {
-        return if(kategorija == Constants.KATEGORIJA_A || kategorija == Constants.KATEGORIJA_B)
-            Constants.KATEGORIJA_AB_BODOVA
-        else Constants.KATEGORIJA_C_BODOVA
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
