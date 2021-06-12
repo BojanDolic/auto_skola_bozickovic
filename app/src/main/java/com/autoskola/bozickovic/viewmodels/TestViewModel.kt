@@ -73,9 +73,9 @@ class TestViewModel @Inject constructor(
 
     fun getPointsBasedOnPitanje(tip: String): Int {
         return if(tip == Constants.CONSTANT_TEORIJA)
-            3
+            2
         else if(tip == Constants.CONSTANT_ZNAK)
-            4
+            3
         else 5
     }
 

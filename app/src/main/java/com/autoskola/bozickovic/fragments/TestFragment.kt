@@ -127,7 +127,7 @@ class TestFragment : Fragment() {
 
             binding.testPitanjeCount.text = resources.getString(
                 R.string.pitanje_count_text,
-                viewModel.trenutniBrojPitanja,
+                viewModel.trenutniBrojPitanja +1,
                 viewModel.brojPitanja
             )
 
