@@ -9,7 +9,7 @@ import com.autoskola.bozickovic.converters.RoomConverters
 import com.autoskola.bozickovic.dao.PitanjaDAO
 import com.autoskola.bozickovic.entities.Pitanje
 
-@Database(entities = [Pitanje::class], version = 2, exportSchema = false)
+@Database(entities = [Pitanje::class], version = 3, exportSchema = false)
 @TypeConverters(RoomConverters::class)
 abstract class PitanjaDatabase : RoomDatabase() {
 

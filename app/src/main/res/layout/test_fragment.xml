@@ -1,97 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.TestFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    
-    
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/pitanje_container"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scroll"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        style="@style/CardViewStroke"
-        app:contentPadding="12dp"
-        android:layout_margin="12dp">
-        
-        <LinearLayout
+        android:layout_marginTop="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pitanje_container"
+                style="@style/CardViewStroke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:contentPadding="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/test_pitanje_count"
+                        style="@style/MaterialTextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="9dp"
+                        android:fontFamily="@font/manrope_extrabold"
+                        android:insetTop="0dp"
+                        android:paddingStart="0dp"
+                        android:paddingTop="0dp"
+                        android:text="Pitanje 1/20"
+                        android:textAlignment="viewStart" />
+
+                    <ImageView
+                        android:id="@+id/pitanje_slika"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/raskrsnica1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/pitanje_tekst_pitanja"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/manrope_regular"
+                        android:text="U saobraćajnoj situaciji kao na slici kojom putanjom vozač motocikla mora izvršiti radnju skretanja ulijevo ?"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/odgovori_container"
+                style="@style/CardViewStroke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:contentPadding="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pitanje_container">
+
+                <LinearLayout
+                    android:id="@+id/pitanje_odgovori_inflater"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/test_pitanje_count"
-                android:layout_width="match_parent"
+                android:id="@+id/provjeri_odgovore_btn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/MaterialTextButton"
-                android:text="Pitanje 1/20"
-                android:paddingStart="0dp"
-                android:layout_marginBottom="9dp"
-                android:paddingTop="0dp"
-                android:insetTop="0dp"
-                android:textAlignment="viewStart"
-                android:fontFamily="@font/manrope_extrabold" />
-            
-            <ImageView
-                android:id="@+id/pitanje_slika"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:src="@drawable/raskrsnica1"
-                android:layout_marginBottom="12dp"/>
+                android:text="Provjeri odgovor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/odgovori_container" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/pitanje_tekst_pitanja"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="U saobraćajnoj situaciji kao na slici kojom putanjom vozač motocikla mora izvršiti radnju skretanja ulijevo ?"
-                android:fontFamily="@font/manrope_regular"
-                android:textSize="15sp" />
-            
-        </LinearLayout>
-        
-    </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/odgovori_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pitanje_container"
-        style="@style/CardViewStroke"
-        app:contentPadding="12dp"
-        android:layout_margin="12dp">
-
-        <LinearLayout
-            android:id="@+id/pitanje_odgovori_inflater"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/provjeri_odgovore_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Provjeri odgovor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/odgovori_container"
-        app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
