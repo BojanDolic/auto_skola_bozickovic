@@ -169,11 +169,11 @@ class TestFragment : Fragment() {
     /**
      * Function used to get data for next question
      */
-    fun nextQuestion() {
+    private fun nextQuestion() {
 
         viewModel.showingResults = false
 
-        viewModel.trenutniBrojPitanja++
+        viewModel.increaseQuestionNumber() // Increase question number because we are moving to another question
         binding.pitanjeOdgovoriInflater.removeAllViews()
         binding.provjeriOdgovoreBtn.text = getString(R.string.provjeri_odgovor_text)
         loadPitanje()
@@ -183,7 +183,7 @@ class TestFragment : Fragment() {
      * Function used to show correct answers
      * @param pitanje Question object
      */
-    fun showAnswers(pitanje: Pitanje) {
+    private fun showAnswers(pitanje: Pitanje) {
 
         viewModel.showingResults = true
 
@@ -192,6 +192,9 @@ class TestFragment : Fragment() {
         }
 
         pitanje.tacniOdgovori.forEachIndexed { _, int ->
+            if(int >= viewModel.odgovori.size) {
+                return
+            }
             viewModel.odgovori[int].setBackgroundColor(
                 resources.getColor(
                     R.color.green_alpha50,
@@ -206,7 +209,12 @@ class TestFragment : Fragment() {
 
     }
 
-    fun populateOdgovore(pitanje: Pitanje) {
+    /**
+     * The function that adds a view for every answer from the question
+     *
+     * @param pitanje [Pitanje][Pitanje.odgovori]
+     */
+    private fun populateOdgovore(pitanje: Pitanje) {
         for (odgovor in pitanje.odgovori) {
 
             val odgovorBind = OdgovorCheckboxBinding.inflate(

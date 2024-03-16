@@ -26,6 +26,10 @@ class TestViewModel @Inject constructor(
     lateinit var pitanje: Pitanje // Trenutno pitanje
     var pitanja: List<Pitanje> = listOf()
 
+    fun increaseQuestionNumber() {
+        trenutniBrojPitanja++
+    }
+
     /**
      * Function used to check if any of the checkboxes is selected
      *

@@ -33,6 +33,7 @@ Naša misija je da obučimo buduće vozače kako da se ponašaju u saobraćaju i
 
     <string name="prosao_ispit_text">POLOŽILI STE TEST</string>
     <string name="pao_ispit_text">PALI STE TEST</string>
+    <string name="contact_fragment_location_text">Lokacija:\nUlica Srpskih sokolova, Doboj</string>
 
 
 </resources>

@@ -87,7 +87,7 @@
                 android:id="@+id/lokacija_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lokacija:\nUlica Srpskih sokolova, Doboj"
+                android:text="@string/contact_fragment_location_text"
                 android:fontFamily="@font/manrope_bold"
                 android:textSize="14sp"
                 android:clickable="false"
